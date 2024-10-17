@@ -17,7 +17,8 @@ google_sheet = None
 def googleSheetsAccess():
     global google_sheet
     permissions = ["https://www.googleapis.com/auth/spreadsheets","https://www.googleapis.com/auth/drive"]
-    pass_file =ServiceAccountCredentials.from_json_keyfile_name("C:\\Users\\Admin\\Downloads\\hackthon-438917-272fcece1f22.json",permissions)
+    # in the path-to-your-key enter your credentials/ key in the format of json 
+    pass_file =ServiceAccountCredentials.from_json_keyfile_name("path-to-your-key",permissions)
     client = gspread.authorize(pass_file)
     google_sheet = client.open("python").sheet1
 
